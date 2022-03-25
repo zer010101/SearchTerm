@@ -13,7 +13,8 @@
 SearchTerm Is A Python Library That Simplifies Google Dorking. No Need To Provide A Cookie, SearchTerm Grabs One For You!
 
 ## USAGE:
-```python
+
+``` py
 import searchterm
 
 searchterm.google(query = 'QUERY_GOES_HERE')
