@@ -10,14 +10,8 @@
 
 
 ## ❓ About:
-SearchTerm Is A Python Library That Simplifies Google Dorking.
+SearchTerm Is A Python Library That Simplifies Google Dorking. No Need To Provide A Cookie, SearchTerm Grabs One For You!
 
-##  ℹ️ Features:
-```bash
-* Proxy Support
-
-* Automates Cookie Generation
-```
 ## USAGE:
 ```py
 import searchterm
