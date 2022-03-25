@@ -5,15 +5,15 @@
 
 
 
-## ❗️ DISCLAIMER:
+## DISCLAIMER
 ### I AM NOT RESPONSIBLE FOR ANYONES ACTIONS WHILE USING THIS PROGRAM PLEASE USE AT YOUR OWN RISK!
 
 
-## ❓ About:
+## About
 SearchTerm Is A Python Library That Simplifies Google Dorking. No Need To Provide A Cookie, SearchTerm Grabs One For You!
 
-## Usage:
-
+## Usage
+Here is an example on how to use this library.
 ``` py
 import searchterm
 
