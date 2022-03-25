@@ -18,6 +18,18 @@ SearchTerm Is A Python Library That Simplifies Google Dorking.
 
 * Automates Cookie Generation
 ```
+## USAGE:
+```py
+import searchterm
+
+searchterm.google(query = 'QUERY_GOES_HERE')
+searchterm.google(gdork = 'DORK_GOES_HERE')
+
+"""Proxy Example:"""
+searchterm.google(query = 'QUERY_GOES_HERE', proxy = 'http://127.0.0.1:8080')
+```
+
+
 
 ## ⚙️ Requirements:
 
