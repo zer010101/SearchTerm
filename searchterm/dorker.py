@@ -23,6 +23,7 @@ searchterm.google(query = 'QUERY_GOES_HERE', proxy = 'http://127.0.0.1:8080')
 ---------------------------------------
 """
 class Google_Dorker:
+
     def __init__(self, query = None, gdork = None, proxy = None):
         """Query gets set here if present."""
         self.query    = query
@@ -34,6 +35,17 @@ class Google_Dorker:
            self.gdork = f'intext:"{self.query}"'
         """Apply proxy IF present."""   
         self.proxy    = proxy
+        """Blacklist Useless URLS."""
+        Google_Dorker.blacklisted_urls = [
+                                         'https://maps.google.com/maps',
+                                         'https://support.google.com/websearch',
+                                         'https://accounts.google.com/ServiceLogin',
+                                         'https://www.google.com/search',
+                                         'https://www.google.com/preferences',
+                                         'https://policies.google.com/privacy',
+                                         'https://policies.google.com/terms',
+                                         'https://www.youtube.com/watch'
+                                         ]
         
     @staticmethod
     def headers():    
@@ -82,11 +94,14 @@ class Google_Dorker:
        for link in links:
           """If 'http' is present in link."""
           if 'http' in link:
-              if link in urls:
-                  pass
+              if link in Google_Dorker.blacklisted_urls:
+                pass
               else:  
-                  url = Google_Dorker.format_url(link)
-                  urls.append(url)
+                  if link in urls:
+                      pass
+                  else:  
+                      url = Google_Dorker.format_url(link)
+                      urls.append(url)
        return urls    
 
     def create_request(self):
