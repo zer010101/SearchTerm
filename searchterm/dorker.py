@@ -94,9 +94,11 @@ class Google_Dorker:
        for link in links:
           """If 'http' is present in link."""
           if 'http' in link:
+              """If The Link Is In The Blacklist."""
               if link in Google_Dorker.blacklisted_urls:
                 pass
               else:  
+                  """If The Link Is Already In The List urls."""
                   if link in urls:
                       pass
                   else:  
