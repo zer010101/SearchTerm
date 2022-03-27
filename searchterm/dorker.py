@@ -125,5 +125,6 @@ class Google_Dorker:
         urls = Google_Dorker.read_html(r)
         """Return The URLS."""
         if urls == []:
-           raise ResultsError
+            """If List Is Empty Raise Error."""
+            raise ResultsError
         return urls
