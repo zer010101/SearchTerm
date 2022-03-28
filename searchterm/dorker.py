@@ -31,7 +31,7 @@ class SearchTerm:
                        'https://www.google.com/preferences',
                        'https://policies.google.com/privacy',
                        'https://policies.google.com/terms',
-                       'https://www.youtube.com/watch'
+                       'https://www.youtube.com/watch',
                        ]
     def __init__(self, query = None, gdork = None, proxy = None):
         #Query gets set here if present.
@@ -81,7 +81,8 @@ class SearchTerm:
        if self._detect_captcha(self): raise CaptchaError
        urls = []
        for link in re.findall(r'http[s*]:[a-zA-Z0-9_.+-/#~]+', self.r):
-          if not (link in SearchTerm.blacklisted_urls and urls) and 'http' in link:
+          if not link in urls:
+            if not link in SearchTerm.blacklisted_urls:
                 urls.append(self._format_url(link))
        if not urls: raise ResultsError
        return urls 
