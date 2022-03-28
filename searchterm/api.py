@@ -1,4 +1,4 @@
-from .dorker import Google_Dorker
+from .dorker import SearchTerm
 """
 CREDITS::
 ---------------------------------------
@@ -21,7 +21,7 @@ searchterm.google(query = 'QUERY_GOES_HERE', proxy = 'http://127.0.0.1:8080')
 ---------------------------------------
 """
 def google(query = None, gdork = None, proxy = None):
-    return Google_Dorker(
+    return SearchTerm(
                          query = query,
                          gdork = gdork,
                          proxy = proxy
