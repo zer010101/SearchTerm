@@ -1,0 +1,15 @@
+class CaptchaError(Exception):
+    def __init__(self) -> None:
+        super().__init__('Google CAPTCHA has been detected!')
+        
+class ResultsError(Exception):
+    def __init__(self) -> None:
+        super().__init__('List empty. No content found.')
+        
+class QueryError(Exception):
+    def __init__(self) -> None:
+        super().__init__('Query Not Found')        
+        
+class RequestFailure(Exception):
+    def __init__(self) -> None:
+        super().__init__('Request Failed To Send.')
