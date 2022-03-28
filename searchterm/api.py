@@ -25,5 +25,5 @@ def google(query = None, gdork = None, proxy = None):
                          query = query,
                          gdork = gdork,
                          proxy = proxy
-                        ).main()
+                        )._execute()
     
