@@ -22,7 +22,7 @@ Proxy Example:
 searchterm.google(query = 'QUERY_GOES_HERE', proxy = 'http://127.0.0.1:8080')
 ---------------------------------------
 """
-class Google_Dorker:
+class SearchTerm:
     blacklisted_urls = [
                        'https://maps.google.com/maps',
                        'https://support.google.com/websearch',
@@ -81,7 +81,7 @@ class Google_Dorker:
        if self._detect_captcha(self): raise CaptchaError
        urls = []
        for link in re.findall(r'http[s*]:[a-zA-Z0-9_.+-/#~]+', self.r):
-          if not (link in Google_Dorker.blacklisted_urls and urls) and 'http' in link:
+          if not (link in SearchTerm.blacklisted_urls and urls) and 'http' in link:
                 urls.append(self._format_url(link))
        if not urls: raise ResultsError
        return urls 
