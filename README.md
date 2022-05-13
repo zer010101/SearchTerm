@@ -1,6 +1,6 @@
 # SearchTerm ~ By Lore<3
 
-## A Python Library For Google Dorking
+## A python library for google dorking
 
 
 
@@ -10,7 +10,7 @@
 
 
 ## About
-SearchTerm Is A Python Library That Simplifies Google Dorking. No Need To Provide A Cookie, SearchTerm Grabs One For You!
+SearchTerm is a python library that simplifies Google Dorking. No need to provide a cookie, SearchTerm grabs one for you!
 
 ## Usage
 Here is an example on how to use this library.
