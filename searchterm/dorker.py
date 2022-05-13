@@ -65,7 +65,7 @@ class SearchTerm:
                 'Cookies'        : cookie
                 }
 
-    @staticmethod
+
     def _detect_captcha(self):
        #If google blocks the request.
        return 'Our systems have detected unusual traffic from your computer network' in self.r
@@ -78,11 +78,11 @@ class SearchTerm:
        return url
        
     def _read_html(self):
-       if self._detect_captcha(self): raise CaptchaError
+       if self._detect_captcha(): raise CaptchaError
        urls = []
        for link in re.findall(r'http[s*]:[a-zA-Z0-9_.+-/#~]+', self.r):
           if not link in urls:
-            if not link in SearchTerm.blacklisted_urls:
+            if not link in self.blacklisted_urls:
                 urls.append(self._format_url(link))
        if not urls: raise ResultsError
        return urls 
