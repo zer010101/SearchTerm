@@ -93,10 +93,10 @@ class SearchTerm:
             #If Request Was A Success.
             session = requests.Session()
             return session.get(
-                        url     = f'https://www.google.com/search?q={self.gdork}',
-                        headers = self._headers(),
-                        proxies = {'https': self.proxy}
-                        ).text 
+                   url     = f'https://www.google.com/search?q={self.gdork}',
+                   headers = self._headers(),
+                   proxies = {'https': self.proxy}
+            ).text 
         except Exception as e: raise RequestFailure
             
     def _execute(self):
