@@ -82,7 +82,7 @@ class SearchTerm:
         return 'Our systems have detected unusual traffic from your computer network' in self.r
            
     @staticmethod
-    def _format_url(url) -> str:
+    def _format_url(url: str) -> str:
         
         # Remove useless strings if present.
         if '/url?q=' in url : url = url.replace('/url?q=','')
