@@ -83,7 +83,6 @@ class SearchTerm:
            
     @staticmethod
     def _format_url(url: str) -> str:
-        
         # Remove useless strings if present.
         if '/url?q=' in url : url = url.replace('/url?q=','')
         if '&sa=' in url    : url = url.split('&sa=')[0]
@@ -95,7 +94,6 @@ class SearchTerm:
     
     @staticmethod
     def check_blacklist(url: str) -> bool:
-        
         for blacklisted_domain in BLACKLISTED_DOMAINS:
             if blacklisted_domain in url:
                 return True
