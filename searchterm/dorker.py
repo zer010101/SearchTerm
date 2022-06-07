@@ -114,7 +114,6 @@ class SearchTerm:
             raise ResultsError
             
 
-
     def _create_request(self) -> None:
         # Constructs a request to google.
         try:
