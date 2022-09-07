@@ -1,7 +1,12 @@
 from requests    import request
 from re          import findall
 
-from .exceptions import CaptchaError, ResultsError, QueryError
+from .exceptions import (
+  CaptchaError, 
+  ResultsError, 
+  QueryError
+)
+
 """
 CREDITS::
 ---------------------------------------
