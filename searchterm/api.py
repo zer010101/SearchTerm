@@ -20,10 +20,12 @@ Proxy Example:
 searchterm.google(query = 'QUERY_GOES_HERE', proxy = 'http://127.0.0.1:8080')
 ---------------------------------------
 """
-def google(query = None, gdork = None, proxy = None):
-    return SearchTerm(
-           query = query,
-           gdork = gdork,
-           proxy = proxy
-    )._execute()
-    
+def google(query = None, gdork = None, proxy = None) -> list:
+    session = SearchTerm(
+        query = query,
+        gdork = gdork,
+        proxy = proxy
+    )
+    if session.execute():
+        return session.urls
+      
