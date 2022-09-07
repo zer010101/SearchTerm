@@ -26,6 +26,6 @@ def google(query = None, gdork = None, proxy = None) -> list:
         gdork = gdork,
         proxy = proxy
     )
-    if session.execute():
+    if session._execute():
         return session.urls
       
