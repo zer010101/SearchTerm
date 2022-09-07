@@ -129,9 +129,10 @@ class SearchTerm:
             raise
          
          
-    def _execute(self) -> list:
+    def _execute(self) -> bool:
         self.r = self._create_request()
+        
         # Find URLS.
         self._read_html()
-        # Return URLS.
-        return self.urls
+        return True
+        
