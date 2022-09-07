@@ -1,12 +1,7 @@
 from requests    import request
 from re          import findall
 
-from .exceptions import (
-  CaptchaError, 
-  ResultsError, 
-  QueryError
-)
-
+from .exceptions import CaptchaError, ResultsError, QueryError
 """
 CREDITS::
 ---------------------------------------
@@ -66,7 +61,8 @@ class SearchTerm:
     @staticmethod
     def _headers() -> dict:    
         cookie = []
-        resp   = request(
+        
+        resp = request(
             method = 'GET',
             url    = 'http://www.google.com'
         )
@@ -110,11 +106,12 @@ class SearchTerm:
             raise CaptchaError
             
         for url in findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.r):
-         if self.if_blacklist(url): 
-            continue
+            
+            if self.if_blacklist(url): 
+                continue
          
-         if not url in self.urls: 
-            self.urls.append(self._format_url(url))
+            if not url in self.urls: 
+                self.urls.append(self._format_url(url))
 
         if not self.urls: 
             raise ResultsError
