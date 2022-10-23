@@ -40,7 +40,6 @@ HEADERS = {
 CAPTCHA_ERROR = 'Our systems have detected unusual traffic from your computer network'
 
 class SearchTerm:
-
     def __init__(self, query = None, gdork = None, proxy = None) -> None:
         # Query gets set here if present.
         if not query:
@@ -57,6 +56,7 @@ class SearchTerm:
         # Apply proxy IF present.   
         self.proxy = proxy
         self.urls  = []
+        
         
     @staticmethod
     def _headers() -> dict:    
@@ -77,10 +77,11 @@ class SearchTerm:
         return r_headers
 
 
-    def _detect_captcha(self) -> bool:
+    def _detect_captcha(self: object) -> bool:
         # If google blocks the request.
         return CAPTCHA_ERROR in self.r
            
+        
     @staticmethod
     def _format_url(url: str) -> str:
         useless_strings = ('&sa=','&amp','\\x26amp')
@@ -101,7 +102,7 @@ class SearchTerm:
                 return True
              
              
-    def _read_html(self) -> None:
+    def _read_html(self: object) -> None:
         if self._detect_captcha(): 
             raise CaptchaError
             
@@ -117,7 +118,7 @@ class SearchTerm:
             raise ResultsError
             
 
-    def _create_request(self) -> str:
+    def _create_request(self: object) -> str:
         # Constructs a request to google.
         try:
             # If request was a success.
