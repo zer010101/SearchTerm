@@ -132,7 +132,7 @@ class SearchTerm:
             raise
          
          
-    def _execute(self) -> bool:
+    def _execute(self: object) -> bool:
         self.r = self._create_request()
         
         # Find URLS.
